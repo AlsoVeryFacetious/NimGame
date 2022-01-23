@@ -28,9 +28,9 @@
 </div>
     <div id="left-side">
         <div id="difficulty">
-            <button id="easyBtn" class="diffBtns">Easy</button>
-            <button id="medBtn" class="diffBtns">Medium</button>
-            <button id="hardBtn" class="diffBtns">Hard</button>
+            <button onclick = 'SetDifficulty(this)' id="easyBtn" class="diffBtns">Easy</button>
+            <button onclick = 'SetDifficulty(this)' id="medBtn" class="diffBtns">Medium</button>
+            <button onclick = 'SetDifficulty(this)' id="hardBtn" class="diffBtns">Hard</button>
         </div>
         <div id="playerNames">
             <p id="player1Title">Player 1:
@@ -52,7 +52,7 @@
     
 
 <!-- easy game board  -->
-<!-- 
+
     <div id="gameBoardEasy">
         <div id="easyRow1" class="boardRows">
             <span class="dot easydot"></span>
@@ -72,11 +72,11 @@
             <span class="dot easydot"></span>
             <button class="row3Btn rowBtns" onclick="RemoveDot(2, this)">Row 3</button>
         </div>
-    </div> -->
+    </div>
 
      <!-- medium game board -->
     
-    <!-- <div id="gameBoardMedium">
+    <div id="gameBoardMedium">
         <div id="mediumRow1" class="boardRows">
             <span class="dot"></span>
             <button class="row1Btn rowBtns" onclick="RemoveDot(0, this)">Row 1</button>
@@ -105,7 +105,7 @@
             <span class="dot"></span>
             <button class="row3Btn rowBtns" onclick="RemoveDot(3, this)">Row 4</button>
         </div>
-    </div> -->
+    </div>
     
 
     

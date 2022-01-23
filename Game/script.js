@@ -1,10 +1,27 @@
 let board = [];
-let rowBtns = document.getElementsByClassName('rowBtns');
 let players = [];
 let playerTurn = 0;
+let difficulty = 0;
+
+let rowBtns = 0;
+
+let easyBoard = document.getElementById('gameBoardEasy');
+let mediumBoard = document.getElementById('gameBoardMedium');
+let hardBoard = document.getElementById('gameBoardHard');
+
+let easyBtn = document.getElementById("easyBtn");
+let mediumBtn = document.getElementById("medBtn");
+let hardBtn = document.getElementById("hardBtn");
 
 let Start = () =>{
-    let rows = document.getElementsByClassName('boardRows');
+
+    rowBtns = difficulty.getElementsByClassName('rowBtns');
+
+    easyBtn.disabled = true;
+    mediumBtn.disabled = true;
+    hardBtn.disabled = true;
+
+    let rows = difficulty.getElementsByClassName('boardRows');
     let player1 = document.getElementById('player1Name').value;
     let player2 = document.getElementById('player2Name').value;
 
@@ -72,6 +89,10 @@ let CheckWin = () => {
         }
     }
     NextTurn();
+
+    easyBtn.disabled = false;
+    mediumBtn.disabled = false;
+    hardBtn.disabled = false;
     // declare winner
     // document.getElementById('chatboxText').innerHTML += `<br>${players[playerTurn]} won!`
 }
@@ -81,3 +102,35 @@ let EnableRowButtons = () =>{
         rowBtns[btn].disabled = false;
     }
 }
+
+let SetDifficulty = (button) => {
+    let easyClick = document.getElementById("easyBtn");
+    if (button == easyClick && easyBoard.style.display === "none") {
+        easyBoard.style.display = "block";
+        difficulty = easyBoard;
+    } else {
+        easyBoard.style.display = "none";
+    }
+
+    var medium = document.getElementById("gameBoardMedium");
+    let mediumClick = document.getElementById("medBtn");
+    if (button == mediumClick && mediumBoard.style.display === "none") {
+        mediumBoard.style.display = "block";
+        difficulty = mediumBoard;
+    } else {
+        mediumBoard.style.display = "none";
+    }
+
+    var hard = document.getElementById("gameBoardHard");
+    let hardClick = document.getElementById("hardBtn");
+    if (button == hardClick && hardBoard.style.display === "none") {
+        hardBoard.style.display = "block";
+        difficulty = hardBoard;
+    } else {
+        hardBoard.style.display = "none";
+    }
+}
+
+easyBoard.style.display = "none";
+mediumBoard.style.display = "none";
+hardBoard.style.display = "none";
